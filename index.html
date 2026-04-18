@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Pawan Engineering · Business Copilot · ARQ ONE AI Labs</title>
+  <meta name="description" content="A grounded AI copilot + dashboard demo for Pawan Engineering (Infinity Die Tools), built by ARQ ONE AI Labs." />
+  <meta name="theme-color" content="#075E54" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">PE</div>
+        <div>
+          <div class="brand-name">Pawan Engineering</div>
+          <div class="brand-sub" id="brand-period">FY 2025-26 · Apr 2025 – Mar 2026</div>
+        </div>
+      </div>
+      <div class="built-by">
+        Built by <span class="built-by-name">ARQ ONE AI Labs</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main">
+    <!-- Identity flag -->
+    <div class="banner banner-amber">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
+      </svg>
+      <div>
+        <strong>Identity check:</strong> source workbooks par naam <strong>Infinity Die Tools</strong> (UDYAM-DD-01-0002992, Daman) likha hai. Dashboard label aapke request ke hisaab se "Pawan Engineering" rakha hai — please confirm karein dono ek hi entity hain.
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <section class="kpi-grid" id="kpi-grid"></section>
+
+    <!-- Main grid -->
+    <section class="main-grid">
+      <!-- LEFT column -->
+      <div class="left-col">
+
+        <div class="card">
+          <div class="section-title">
+            <h2><span class="title-icon">📊</span> Monthly sales vs purchases <span class="muted-suffix">(₹ Lakhs)</span></h2>
+            <p>Sep–Dec 2025 strong run, Mar 2026 review zaroori</p>
+          </div>
+          <div class="chart-wrap" id="chart-monthly"></div>
+          <div class="legend">
+            <span class="legend-item"><span class="swatch" style="background:#25D366"></span>Sales</span>
+            <span class="legend-item"><span class="swatch" style="background:#075E54"></span>Purchases</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">
+            <h2><span class="title-icon">📈</span> Monthly gross profit <span class="muted-suffix">(₹ Lakhs)</span></h2>
+            <p>Pure FY mein sirf March negative — likely timing issue</p>
+          </div>
+          <div class="chart-wrap chart-gp" id="chart-gp"></div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <div class="section-title">
+              <h2><span class="title-icon">👥</span> Top customers</h2>
+              <p>Top 5 = 70.4% sales</p>
+            </div>
+            <div class="rowbars" id="top-customers"></div>
+          </div>
+          <div class="card">
+            <div class="section-title">
+              <h2><span class="title-icon">🚚</span> Top vendors</h2>
+              <p>Top 3 = 72.1% purchases</p>
+            </div>
+            <div class="rowbars" id="top-vendors"></div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <div class="section-title">
+              <h2>Top products by sales</h2>
+              <p>2 SKUs = 55% revenue</p>
+            </div>
+            <div class="rowbars" id="top-products"></div>
+          </div>
+          <div class="card">
+            <div class="section-title">
+              <h2>Top input materials</h2>
+              <p>SS CR Coils alone = 48.4% purchases</p>
+            </div>
+            <div class="rowbars" id="top-materials"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">
+            <h2><span class="title-icon">⚠️</span> Alerts — yeh cheezein dekhna chahiye</h2>
+            <p>Aapki books se auto-flagged</p>
+          </div>
+          <div id="alerts"></div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">
+            <h2>Data notes</h2>
+            <p>Honest read of your books — flagged before any decision</p>
+          </div>
+          <ul class="notes" id="data-notes"></ul>
+        </div>
+
+      </div>
+
+      <!-- RIGHT column: copilot (WhatsApp style) -->
+      <aside class="right-col">
+        <div class="copilot-card">
+
+          <!-- WhatsApp-style header -->
+          <div class="copilot-header">
+            <div class="copilot-brand">
+              <div class="copilot-avatar">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3l1.9 4.7L18.5 9 14 12l1.5 5L12 14l-3.5 3L10 12 5.5 9l4.6-1.3z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="copilot-title">Business Copilot</div>
+                <div class="copilot-sub"><span class="online-dot"></span>online · grounded in your books</div>
+              </div>
+            </div>
+            <div class="copilot-actions">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+            </div>
+          </div>
+
+          <!-- Chat messages area -->
+          <div class="messages" id="messages"></div>
+
+          <!-- Suggestions -->
+          <div class="suggestions" id="suggestions"></div>
+
+          <!-- Input row -->
+          <div class="input-row">
+            <input id="ask-input" type="text" placeholder="Type a message…" autocomplete="off" />
+            <button id="ask-btn" type="button" aria-label="Send">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <div>Demo · figures grounded in uploaded FY 25-26 books · overheads not modelled</div>
+      <div class="footer-arq">ARQ ONE AI Labs →</div>
+    </footer>
+  </main>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
